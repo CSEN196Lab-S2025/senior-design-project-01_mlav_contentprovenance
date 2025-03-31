@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3, 
+    "name": "Ascertion", 
+    "version": "1.0", 
+    "description": "Text verification on social media platforms.",
+    "permissions": [
+        "nativeMessaging",
+        "activeTab", 
+        "scripting", 
+        "storage",
+        "contextMenus"
+    ], 
+    "host_permissions": [
+        "https://*/"
+    ], 
+    "background": {
+        "service_worker": "background.js"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["https://www.linkedin.com/*"], 
+            "js": ["content.js"]
+        }
+    ], 
+    "icons": {
+        "128": "icons/placeholder.png"
+    }, 
+    "action": {
+        "default_icon": {
+            "128": "icons/128.png"
+        }, 
+        "default_title": "Click to activate"
+    }
+}
